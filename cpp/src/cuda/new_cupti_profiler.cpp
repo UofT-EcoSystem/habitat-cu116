@@ -256,7 +256,7 @@ class NewCuptiProfiler::State {
     if (!NV::Metric::Config::GetConfigImage(metrics_context_, chip_name_, {metric}, inserted.first->second)) {
       throw std::runtime_error("Failed to create config_image!");
     }
-#elif (CUDA_VERSION == 10020) || (CUDA_VERSION == 11010) || (CUDA_VERSION == 11030) || (CUDA_VERSION == 11060)
+#elif (CUDA_VERSION >= 10020) 
     if (!NV::Metric::Config::GetConfigImage(chip_name_, {metric}, inserted.first->second)) {
       throw std::runtime_error("Failed to create config_image!");
     }
