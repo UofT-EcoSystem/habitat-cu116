@@ -43,7 +43,7 @@ if [ -z "$RUNNING" ] && [ -z "$EXITED" ]; then
     -e "CONTAINER_UNAME=$(id -un)" \
     --name $CONTAINER_NAME \
     --volume $MOUNT_VOL \
-    --runtime=nvidia \
+    --gpus=all \
     --workdir=/home/$UNAME \
     --shm-size=1g \
     --ulimit memlock=-1 \
